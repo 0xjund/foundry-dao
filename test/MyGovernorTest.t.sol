@@ -8,7 +8,7 @@ import {Box} from "src/Box.sol";
 import {TimeLock} from "src/TimeLock.sol";
 import {GovToken} from "src/GovToken.sol";
 
-contract MyGovernorTest is Test{
+contract MyGovernorTest is Test {
     MyGovernor governor;
     Box box;
     TimeLock timelock;
@@ -26,7 +26,7 @@ contract MyGovernorTest is Test{
     bytes[] calldatas;
     address[] targets;
 
-    function setUp() public{
+    function setUp() public {
         govToken = new GovToken();
         govToken.mint(USER, INITIAL_SUPPLY);
         // Delegate the token to yourself
@@ -97,5 +97,4 @@ contract MyGovernorTest is Test{
         console.log("Box Value: ", box.getNumber());
         assert(box.getNumber() == valueToStore);
     }
-
 }
